@@ -1,0 +1,179 @@
+<html><head><title>Титры | Vampire: The Masquerade — Out for Blood</title>
+<meta charset="utf-8"> 
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name = "viewport" content = "width = device-width">
+<link href="style.css" rel="stylesheet" type="text/css">
+<script src="version.js"></script>
+<style>
+body {
+  background-color: white;
+}
+h2 {
+  font-size: larger;
+}
+:target {
+	display: none;
+}
+</style>
+	<script>
+		window.onload = function () {
+			var params = new URLSearchParams(window.location.search);
+			if (params.has("embedded")) {
+				var h1 = document.getElementsByTagName("h1")[0];
+				h1.parentNode.removeChild(h1);
+				
+				var h2 = document.getElementsByTagName("h2")[0];
+				h2.innerText = h2.innerText;
+				
+				var back = document.getElementById("back");
+				back.parentNode.removeChild(back);
+
+				var companyId = "cog";
+				if (document.getElementById('about-hc')) {
+					companyId = "hc";
+				} else if (document.getElementById('about-hg')) {
+					companyId = "hg";
+				}
+
+				if (params.has("embedded", "omnibus")) {
+					var cta = document.getElementById("about-cta");
+					if (companyId === "hg") {
+						cta.innerHTML = `<p>Познакомьтесь с другими авторами Hosted Games на <a href="https://forum.choiceofgames.com/">форуме Choice of Games</a>!</p>`
+					} else {
+						cta.innerHTML = `<p>Следите за Choice of Games в <a href="https://www.facebook.com/choiceofgames">Facebook</a>,
+							<a href="https://www.instagram.com/choiceofgames">Instagram</a>,
+							<a href="https://choiceofgames.tumblr.com/">Tumblr</a>,
+							или загляните на наш <a href="https://forum.choiceofgames.com/">форум</a>!</p>`
+					}
+				} else {
+					var platform =
+						window.isSteamApp ? "steam"
+						: window.isIosApp ? "ios"
+						: window.isAmazonAndroidApp ? "aaa"
+						: window.isAndroidApp ? "gps"
+						: "web";
+					var moreGamesLink = {
+						steam: {
+							cog: "https://store.steampowered.com/developer/choiceofgames",
+							hg: "https://store.steampowered.com/developer/choiceofgames",
+							hc: "https://store.steampowered.com/developer/heartschoice",
+						},
+						ios: {
+							cog: "https://apps.apple.com/us/app/choice-of-games/id1363309257",
+							hg: "https://apps.apple.com/us/app/hosted-games/id1302297731",
+							hc: "https://apps.apple.com/us/app/hearts-choice/id1487052276",
+						},
+						gps: {
+							cog: "https://play.google.com/store/apps/details?id=com.choiceofgames.omnibus",
+							hg: "https://play.google.com/store/apps/details?id=org.hostedgames.omnibus",
+							hc: "https://play.google.com/store/apps/details?id=com.heartschoice.o",
+						},
+						aaa: {
+							cog: "https://www.amazon.com/dp/B07SSNV95K",
+							hg: "https://www.amazon.com/dp/B07SQLMR9V",
+							hc: "https://www.amazon.com/dp/B081YD1M4F",
+						},
+						web: {
+							cog: "https://www.choiceofgames.com/",
+							hg: "https://www.choiceofgames.com/category/user-made-games/",
+							hc: "https://www.heartschoice.com/shop/",
+						}
+					}[platform][companyId];
+					var cta = document.getElementById("about-cta");
+					cta.innerHTML = `<p><a href="${moreGamesLink}">Другие игры вроде этой</p>`
+				}
+			}
+
+			if (window.version) document.getElementById('versionReport').innerHTML = "Версия игры: " + window.version;
+		}
+	</script>
+</head>
+<body id="main" class="container">
+<h1>Титры</h1><div id="credits">
+
+<h2><a href="https://www.choiceofgames.com/out-for-blood">Vampire: The Masquerade — Out for Blood</a></h2>
+
+<ul><li>Автор: <a href="http://zombieexodus.com/" target="_new">Jim Dattilo</a></li>
+	<li>Художник: <a href="https://www.edouard-noisette.com/#1" target="_new">Edouard Noisette</a></li>
+	<li>Портреты персонажей: <a href="https://www.amywilkinsart.com/" target="_new">Amy Wilkins</a></li>
+	<li>Редактура: Kirsten Hipsky</li>
+	<li>Заставки глав: <a href="https://www.cataphrak.com" target="_new">Paul Wang</a></li>
+	<li>Консультанты по культурному контексту: Noordin Ali Kadir, Benjamin Rosenbaum</li>
+	<li>Тестирование сюжета: Aletheia Knights</li>
+	<li>Тестирование культурного контекста: Zoja Barylko, Kaan Eren, Abdullah Mohammad, Faraz Quraishi, Jonathan Stollman</li>
+	<li>Бета-тестеры: Kayla Brady, Ryan Chang, Eric Chin, Ian Crider, Stacie Daniel, Aaron Danvers-Jukes, Meredith Davis, James DeGaray, Sayer Detling-Edsall, Christopher Duong, Graham Eyre, Shedrick Flax, Alicia Gugele, Hadi Hanif, Maria Harrison, Jaden Hartfield, Kai Jackson, Andras Karunaharan, Miriam Laird, Gaia Lambruschi, Ciara McLaren, Fernando Neves, Randy Parrish, Nathaniel Pelton, Rafe School, Caio Silva, David W. Snee, Cynthia Sulit, Eric Thomas, Amanda Tran, Jhenne Tyler, Isaiah VanScoy, Marlo Jansen van Vuuren, Alexia Walker, Raymond Watson, David Zou</li>
+	<li>Главный редактор: Jason Stevan Hill</li>
+	<li>Дизайн и разработка языка ChoiceScript: Dan Fabulich</li>
+</ul>
+
+<p>© Paradox Interactive AB. Разработано Choice Games LLC по лицензии. Vampire: The Masquerade® — зарегистрированный товарный знак Paradox Interactive AB. Все права защищены.<p>
+
+<p><img src="https://www.choiceofgames.com/wp-content/uploads/2020/04/promo408-4.png"></p>
+
+<h2>Об авторе</h2>
+<p>Jim Dattilo большую часть времени проводит за расчётами и техническими документами для школы медицины Перельмана Пенсильванского университета. Он изучал английскую литературу и биологию в Университете Ла Салль в Филадельфии, живёт в Нью-Джерси с женой Вики и питбулем Хоупом. Всю жизнь увлекается ролевыми играми и сейчас ведёт несколько виртуальных настольных кампаний. <i>Vampire: The Masquerade &mdash; Out for Blood</i> — его пятая игра на ChoiceScript; он единственный автор, публиковавшийся во всех трёх импринтах ChoiceScript.</p>
+
+</div>
+
+<!--
+<div id="author">
+<h2>Об авторе</h2>
+<p>INSERTINSERTINSERT</p>
+</div>
+-->
+
+<div id="about-cog" class="about-us">
+<h2>О Choice of Games</h2>
+<p>Choice of Games — крупнейшее в мире издательство интерактивных романов. Наши отмеченные наградами игры целиком текстовые — сотни тысяч слов и сотни выборов, без графики и звуковых эффектов, — и работают на безграничной силе вашего воображения. Выбирайте свой путь: ваши решения управляют историей.</p>
+
+<p>С 2009 года мы выпустили более 150 интерактивных романов в Steam, в интернете и в приложении «Choice of Games» для iPhone и Android, в том числе несколько номинантов на премию «Небула» от SFWA. Мы выпускаем более десятка игр в год и продолжаем пополнять каталог старых игр, которые доступны всем читателям бесплатно.</p>
+
+<p>С помощью ChoiceScript — языка сценариев, созданного нами для интерактивных романов, — один автор может написать полноценное ветвящееся повествование длиной в сотни тысяч слов, единым голосом и под единым творческим замыслом. За одно прохождение игрок прочитает примерно 20% этих слов, поэтому игры остаются свежими при каждом новом прохождении.</p>
+
+<div id="about-cta">
+<p><a href="https://www.choiceofgames.com/">Другие игры вроде этой</a></p>
+</div>
+
+</div>
+
+<!--
+<div id="about-hc" class="about-us">
+<h2>About Heart's Choice</h2>
+<p>Become the main character of a romance novel! Choose your path to passion and find your Happily Ever After.</p>
+
+<p>Since 2009, the team behind Choice of Games has created high-quality interactive novels in all genres. Now, our new Heart’s Choice label puts romance at the center of the story, and you at the center of the romance.</p>
+
+<p>There are no graphics or sound effects, so we can focus on the story. Every game is filled with vivid, fully-developed characters and complex narratives that respond to your choices.</p>
+
+<p>Every path is always open to you: we never charge extra for the best options or most interesting storylines. Unlike other games where you have to work your way through "failure" endings to get to the "good endings," in Heart's Choice, you'll always be able to choose a Happily Ever After with the character (or characters) you desire.</p>
+
+<p>Whatever gender or orientation you want to play, there will be a Heart’s Choice game for you in our catalog! And whether you like your romance sweet, spicy, or smoking hot, you’ll be able to find a story that you love.</p>
+
+<div id="about-cta">
+<p><a href="https://www.heartschoice.com/shop/">Play more games like this</a></p>
+</div>
+</div>
+-->
+
+<!--
+<div id="about-hg" class="about-us">
+<h2>About Hosted Games</h2>
+<p>Authors just like you have developed games using <a href="http://www.choiceofgames.com/make-your-own-games/choicescript-intro/">ChoiceScript</a>, a simple programming language for writing multiple-choice games where your decisions control the story. Writing games with ChoiceScript is easy and fun, even for authors with no programming experience.</p>
+
+<p>Write your own game and we'll <a href="https://www.choiceofgames.com/looking-for-writers/write-a-hosted-game/">host it for you online</a>, giving you a share of the revenue your game produces.</p>
+
+<div id="about-cta">
+<p><a href="https://www.choiceofgames.com/category/user-made-games/">Play more games like this</a></p>
+</div>
+</div>
+-->
+
+<h2>О World of Darkness</h2>
+<p>World of Darkness — трансмедийный развлекательный бренд, объединяющий ряд современных фэнтези-хоррор-франшиз, включая <i>Vampire: The Masquerade, Werewolf: The Apocalypse,</i> и другие. Через настольные ролевые игры, видеоигры, настольные игры, литературу, комиксы и не только эти франшизы рассказывают взрослые истории в тёмном сверхъестественном фэнтези, наложенном на наш современный мир. С 1991 года World of Darkness задаёт эталон развлечения с точки зрения монстров для целого поколения поклонников. Подробнее: <a href="https://www.worldofdarkness.com/" target="_new">www.worldofdarkness.com</a>.</p>
+
+<div id="versionReport"></div>
+<div id="otherVersion"></div>
+
+<p><a id="back" href="index.html">Вернуться в игру</a>
+</body>
+</html>
